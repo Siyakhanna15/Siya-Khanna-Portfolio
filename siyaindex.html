@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siya Khanna - Business Analytics Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.5rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            z-index: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            color: white;
+        }
+
+        .hero-image {
+            flex: 0 0 300px;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-links a, .btn {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .contact-links a:hover, .btn:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        #about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-icon {
+            font-size: 1.5rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-badge {
+            background: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Projects Section */
+        #projects {
+            background: #f8f9fa;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+        }
+
+        .project-full {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-header-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .project-header-section h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-header-section .subtitle-text {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .project-domain {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .project-content-section {
+            padding: 3rem 2rem;
+        }
+
+        .project-overview {
+            margin-bottom: 3rem;
+        }
+
+        .project-overview h4 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-overview p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .project-overview ul {
+            margin-left: 2rem;
+            color: #666;
+        }
+
+        .project-overview li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Image Gallery */
+        .project-gallery {
+            margin: 3rem 0;
+        }
+
+        .gallery-title {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .image-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+            background: #f5f5f5;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .project-screenshot {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 3rem;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-btn.prev {
+            left: 20px;
+        }
+
+        .carousel-btn.next {
+            right: 20px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #667eea;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Education Section */
+        #education {
+            background: #f8f9fa;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateX(10px);
+        }
+
+        .education-item h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .degree {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 2rem;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-item h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+        }
+
+        .experience-item .role {
+            color: #667eea;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .experience-item .date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .experience-item ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.7rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Certificates Section */
+        #certificates {
+            background: #f8f9fa;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .certificate-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            overflow: hidden;
+        }
+
+        .certificate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .certificate-content {
+            padding: 1.5rem;
+        }
+
+        .certificate-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .certificate-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        #contact h2 {
+            color: white;
+        }
+
+        #contact h2::after {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .title {
+                font-size: 1.3rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .carousel-btn.prev {
+                left: 10px;
+            }
+
+            .carousel-btn.next {
+                right: 10px;
+            }
+
+            .carousel-slide img, .project-screenshot {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">Siya Khanna</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Siya Khanna</h1>
+                <div class="title">Business Analytics Professional</div>
+                <div class="subtitle">Turning Data into Actionable Insights</div>
+                
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">ML Projects</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Power BI Project</span>
+                    </div>
+                </div>
+
+                <div class="contact-links">
+                    <a href="mailto:Khanna.siy@northeastern.edu">📧 Email</a>
+                    <a href="https://www.linkedin.com/in/siyakhanna15/" target="_blank">💼 LinkedIn</a>
+                    <a href="tel:+18575656780">📞 Call</a>
+                    <a href="#" class="btn-primary">📄 Download Resume</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <!-- YOUR PHOTO HERE - Replace the src with your photo URL -->
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23667eea' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='80' fill='white'%3ESK%3C/text%3E%3C/svg%3E" alt="Siya Khanna" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content fade-in">
+                <p>Business Analytics professional with experience in data analysis, process optimization, and performance reporting. Skilled in SQL, Python, Power BI, Tableau, and Excel to turn complex data into actionable insights. Strong background in SAP ERP, KPI tracking, and compliance analytics in fast-paced environments. Currently pursuing Master's in Business Analytics from Northeastern University, with hands-on experience in machine learning, predictive modeling, and data visualization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3><span class="skill-icon">📊</span> Data Analytics</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">R</span>
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">Excel</span>
+                        <span class="skill-badge">Alteryx</span>
+                        <span class="skill-badge">Statistical Analysis</span>
+                        <span class="skill-badge">Data Mining</span>
+                        <span class="skill-badge">Predictive Modeling</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3><span class="skill-icon">📈</span> Data Visualization</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge">Power BI</span>
+                        <span class="skill-badge">Tableau</span>
+                        <span class="skill-badge">PowerPoint</span>
+                        <span class="skill-badge">Trend Analysis</span>
+                        <span class="skill-badge">Dashboard Development</span>
+                        <span class="skill-badge">Data Storytelling</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3><span class="skill-icon">🤖</span> Machine Learning</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge">Scikit-learn</span>
+                        <span class="skill-badge">Linear Regression</span>
+                        <span class="skill-badge">Logistic Regression</span>
+                        <span class="skill-badge">K-means Clustering</span>
+                        <span class="skill-badge">Feature Engineering</span>
+                        <span class="skill-badge">Model Evaluation</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3><span class="skill-icon">💼</span> Business Systems</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge">SAP FI ECC6.0</span>
+                        <span class="skill-badge">SAP S/4 HANA</span>
+                        <span class="skill-badge">Oracle</span>
+                        <span class="skill-badge">Jira</span>
+                        <span class="skill-badge">SharePoint</span>
+                        <span class="skill-badge">Executive Reporting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-container">
+                
+                <!-- Project 1: Market Wheels -->
+                <div class="project-full fade-in">
+                    <div class="project-header-section">
+                        <h3>🚗 MARKET WHEELS</h3>
+                        <p class="subtitle-text">Machine Learning Insights for Pricing, Segmentation & Brand Positioning</p>
+                        <span class="project-domain">Marketing Analytics | Used Car Market</span>
+                    </div>
+                    
+                    <div class="project-content-section">
+                        <div class="project-overview">
+                            <h4>📋 Project Overview</h4>
+                            <p>Developed comprehensive analytics system for used-car market analysis using unsupervised and supervised machine learning techniques. Analyzed 98,836 vehicles to provide data-driven insights for pricing optimization, market segmentation, and brand positioning strategies.</p>
+                            
+                            <h4>🎯 Business Problems Solved</h4>
+                            <ul>
+                                <li><strong>Pricing Optimization:</strong> Identified key features influencing vehicle prices and developed data-driven pricing strategies</li>
+                                <li><strong>Market Segmentation:</strong> Discovered 4 distinct customer segments (Premium, Mid-Range, Economy, Budget) using K-means clustering</li>
+                                <li><strong>Brand Positioning:</strong> Analyzed brand positioning relative to competitors and identified differentiation opportunities</li>
+                            </ul>
+
+                            <h4>💡 Key Achievements</h4>
+                            <ul>
+                                <li>Segmented 98,836 vehicles into 4 market clusters with 98% classification accuracy</li>
+                                <li>Identified that engine size and vehicle age are top positive price drivers (+64% and +49% correlation)</li>
+                                <li>Discovered mileage as strongest negative price driver (-42% correlation)</li>
+                                <li>Found Mercedes, BMW, and Audi command £3,000+ premium over expected prices</li>
+                                <li>Provided actionable recommendations for inventory optimization and targeted marketing</li>
+                            </ul>
+                        </div>
+
+                        <!-- Project Screenshots Carousel -->
+                        <div class="project-gallery">
+                            <h4 class="gallery-title">📸 Project Visualizations</h4>
+                            <div class="image-carousel" data-carousel="marketwheels">
+                                <div class="carousel-container">
+                                    <!-- Slide 1 -->
+                                    <div class="carousel-slide">
+                                        <div class="project-screenshot">🚗</div>
+                                        <div class="slide-caption">Slide 1: EDA Dashboard - Total Vehicles: 98,836 | Avg Price: $16,797</div>
+                                    </div>
+                                    
+                                    <!-- Slide 2 -->
+                                    <div class="carousel-slide">
+                                        <div class="project-screenshot">📊</div>
+                                        <div class="slide-caption">Slide 2: Price Distribution - Most cars priced $10K-$20K</div>
+                                    </div>
+
+                                    <!-- Slide 3 -->
+                                    <div class="carousel-slide">
+                                        <div class="project-screenshot">🎯</div>
+                                        <div class="slide-caption">Slide 3: K-means Clustering - 4 Market Segments Identified</div>
+                                    </div>
+
+                                    <!-- Slide 4 -->
+                                    <div class="carousel-slide">
+                                        <div class="project-screenshot">📈</div>
+                                        <div class="slide-caption">Slide 4: Segment Analysis - Premium priced 4× higher than budget</div>
+                                    </div>
+
+                                    <!-- Slide 5 -->
+                                    <div class="carousel-slide">
+                                        <div class="project-screenshot">🏆</div>
+                                        <div class="slide-caption">Slide 5: Brand Positioning Strategy Quadrant</div>
+                                    </div>
+
+                                    <!-- Slide 6 -->
+                                    <div class="carousel-slide">
+                                        <div class="project-screenshot">🔍</div>
+                                        <div class="slide-caption">Slide 6: Correlation Heatmap - Key Price Drivers</div>
+                                    </div>
+
+                                    <!-- Slide 7 -->
+                                    <div class="carousel-slide">
+                                        <div class="project-screenshot">📉</div>
+                                        <div class="slide-caption">Slide 7: Price Sensitivity to Mileage, Age & Engine Size</div>
+                                    </div>
+
+                                    <!-- Slide 8 -->
+                                    <div class="carousel-slide">
+                                        <div class="project-screenshot">⚙️</div>
+                                        <div class="slide-caption">Slide 8: Transmission & Fuel Type Premium Analysis</div>
+                                    </div>
+                                </div>
+                                
+                                <button class="carousel-btn prev" onclick="moveCarousel('marketwheels', -1)">‹</button>
+                                <button class="carousel-btn next" onclick="moveCarousel('marketwheels', 1)">›</button>
+                            </div>
+                            <div class="carousel-dots" id="dots-marketwheels"></div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">K-means Clustering</span>
+                            <span class="tech-tag">Linear Regression</span>
+                            <span class="tech-tag">Logistic Regression</span>
+                            <span class="tech-tag">Seaborn</span>
+                            <span class="tech-tag">Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Car Price Prediction -->
+                <div class="project-full fade-in">
+                    <div class="project-header-section" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <h3>💰 CAR PRICE PREDICTION</h3>
+                        <p class="subtitle-text">Machine Learning Model for Accurate Vehicle Price Estimation</p>
+                        <span class="project-domain">Predictive Analytics | Regression Modeling</span>
+                    </div>
+                    
+                    <div class="project-content-section">
+                        <div class="project-overview">
+                            <h4>📋 Project Overview</h4>
+                            <p>Built an end-to-end machine learning pipeline to predict used car prices based on vehicle characteristics. Performed comprehensive exploratory data analysis, feature engineering, and model optimization to develop an accurate price prediction system.</p>
+                            
+                            <h4>🔬 Technical Approach</h4>
+                            <ul>
+                                <li><strong>Data Exploration:</strong> Analyzed vehicle dataset to understand price distributions and feature relationships</li>
+                                <li><strong>Feature Engineering:</strong> Created new features and performed correlation analysis to identify key price drivers</li>
+                                <li><strong>Feature Selection:</strong> Applied Sequential Feature Selection (SFS) and Backward Elimination to optimize predictor variables</li>
+                                <li><strong>Model Development:</strong> Built and fine-tuned Linear Regression model with cross-validation</li>
+                                <li><strong>Model Evaluation:</strong> Used RMSE, R² score, and residual analysis to assess model performance</li>
+                            </ul>
+
+                            <h4>💡 Key Results</h4>
+                            <ul>
+                                <li>Developed accurate price prediction model with low RMSE</li>
+                                <li>Identified optimal feature set through systematic selection process</li>
+                                <li>Created interpretable model suitable for business decision-making</li>
+                                <li>Validated model performance through comprehensive testing</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Mlxtend (SFS)</span>
+                            <span class="tech-tag">Linear Regression</span>
+                            <span class="tech-tag">Seaborn</span>
+                            <span class="tech-tag">Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-item fade-in">
+                    <h3>Northeastern University</h3>
+                    <div class="degree">Master of Science in Business Analytics</div>
+                    <div class="date">Boston, MA | Dec 2025</div>
+                </div>
+                <div class="education-item fade-in">
+                    <h3>University of Delhi</h3>
+                    <div class="degree">Bachelor of Arts (Honors) - Major in Economics</div>
+                    <div class="date">Delhi, India | May 2023</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item fade-in">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Futurewei Technologies Inc</h3>
+                            <div class="role">Business Analyst Intern</div>
+                        </div>
+                        <div class="date">May 2025 - Aug 2025<br>Massachusetts, US</div>
+                    </div>
+                    <ul>
+                        <li>Analyzed 15+ enterprise AI automation use cases across finance, HR, and operations by mapping current-state processes and identifying business process gaps suitable for automation</li>
+                        <li>Defined functional and technical requirements for 3 shortlisted AI initiatives, documenting workflows, assumptions, and dependencies in BRDs and Lucidchart process diagrams</li>
+                        <li>Built cost, ROI, and feasibility models in Excel to evaluate implementation effort, projected savings, and risk, directly supporting leadership decisions impacting $500K+ in investment planning</li>
+                        <li>Developed KPI frameworks and decision matrices comparing use cases across cost, complexity, and business value, enabling structured prioritization of AI initiatives</li>
+                        <li>Prepared executive-facing presentations and business reports summarizing analysis and recommendations, supporting cross-functional stakeholders across product, engineering, and strategy teams</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item fade-in">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Nestlé Business Services</h3>
+                            <div class="role">Business Analyst</div>
+                        </div>
+                        <div class="date">Aug 2023 - Aug 2024<br>Gurugram, India</div>
+                    </div>
+                    <ul>
+                        <li>Engineered interactive Power BI dashboards and data visualizations to monitor workforce compliance KPIs by designing automated ETL workflows, enabling 50+ cross-functional stakeholders to achieve 15% improvement in submission adherence</li>
+                        <li>Conducted comprehensive business process audits and gap analysis on financial workflows by extracting and analyzing transactional datasets in Excel, executing root cause analysis on process deviations</li>
+                        <li>Performed data reconciliation and validation processes in SAP ERP by implementing three-way matching algorithms to verify vendor invoice accuracy</li>
+                        <li>Led user training and change management initiatives for time-tracking and compliance systems by developing training documentation and facilitating stakeholder sessions</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item fade-in">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Fundsroom</h3>
+                            <div class="role">Business Analyst Intern</div>
+                        </div>
+                        <div class="date">Jan 2022 - Feb 2022<br>Delhi, India</div>
+                    </div>
+                    <ul>
+                        <li>Optimized business operations by automating reporting processes, improving operational efficiency by 25% and strengthening performance tracking</li>
+                        <li>Conducted strategic market analysis and business intelligence on 20+ investment products using data-driven methodologies, identifying growth opportunities</li>
+                        <li>Collaborated with cross-functional teams to develop customer acquisition strategies and optimize business case execution based on competitive market trends</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <div class="container">
+            <h2>Awards & Certificates</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card fade-in">
+                    <div class="certificate-image">
+                        <!-- YOUR CERTIFICATE IMAGE HERE -->
+                        🏆
+                    </div>
+                    <div class="certificate-content">
+                        <h3>NBS Awards 2023 - Certificate of Achievement</h3>
+                        <p><strong>Nestlé Business Services, Gurugram</strong></p>
+                        <p>Awarded for unwavering dedication, relentless hard work, and unyielding commitment. Recognized for excellence and tireless work ethic that serves as a beacon of inspiration for colleagues and drives collective achievements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:Khanna.siy@northeastern.edu">Khanna.siy@northeastern.edu</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/siyakhanna15/" target="_blank">linkedin.com/in/siyakhanna15</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone</h3>
+                    <a href="tel:+18575656780">+1 (857) 565-6780</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Boston, MA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Siya Khanna. All rights reserved.</p>
+            <p>Built with passion for data and analytics 📊</p>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        const carousels = {};
+
+        function initCarousel(name) {
+            const carousel = document.querySelector(`[data-carousel="${name}"]`);
+            if (!carousel) return;
+            
+            const container = carousel.querySelector('.carousel-container');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const dotsContainer = document.getElementById(`dots-${name}`);
+            
+            carousels[name] = {
+                currentIndex: 0,
+                totalSlides: slides.length,
+                container: container
+            };
+
+            // Create dots
+            for (let i = 0; i < slides.length; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                if (i === 0) dot.classList.add('active');
+                dot.onclick = () => goToSlide(name, i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function moveCarousel(name, direction) {
+            const carousel = carousels[name];
+            carousel.currentIndex += direction;
+            
+            if (carousel.currentIndex < 0) {
+                carousel.currentIndex = carousel.totalSlides - 1;
+            } else if (carousel.currentIndex >= carousel.totalSlides) {
+                carousel.currentIndex = 0;
+            }
+            
+            updateCarousel(name);
+        }
+
+        function goToSlide(name, index) {
+            carousels[name].currentIndex = index;
+            updateCarousel(name);
+        }
+
+        function updateCarousel(name) {
+            const carousel = carousels[name];
+            const offset = -carousel.currentIndex * 100;
+            carousel.container.style.transform = `translateX(${offset}%)`;
+            
+            // Update dots
+            const dots = document.querySelectorAll(`#dots-${name} .dot`);
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === carousel.currentIndex);
+            });
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            initCarousel('marketwheels');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '#555';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.color = '#667eea';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
